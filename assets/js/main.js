@@ -8,6 +8,26 @@ menuBtn.addEventListener('click', ()=> {
 })
 
 
+/*--- DD Menu ---*/
+var drop = document.getElementsByClassName('collapse');
+var dd;
+
+for (dd = 0; dd < drop.length; dd++) {
+    drop[dd].addEventListener('click', function() {
+    this.classList.toggle('active2');
+
+    var menuList = this.nextElementSibling;
+    
+    if (menuList.style.maxHeight) {
+        menuList.style.maxHeight = null;
+    } else {
+        menuList.style.maxHeight = menuList.scrollHeight + "px";
+    }
+  });
+}
+
+
+
 /*
 window.addEventListener('scroll', function() {
     var scroll = document.querySelector('.scrolltop');

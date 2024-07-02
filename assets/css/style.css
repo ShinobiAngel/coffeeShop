@@ -138,19 +138,6 @@ button {
     cursor: pointer;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-button::-moz-focus-inner {
-    outline: 0;
-    border: 0;
-    outline: none !important;
-    border: none !important;
-}
-
 button,
 html input[type="button"],
 input[type="reset"],
@@ -162,6 +149,19 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button::-moz-focus-inner {
+    outline: 0;
+    border: 0;
+    outline: none !important;
+    border: none !important;
 }
 
 
@@ -553,18 +553,18 @@ html input[disabled] {
 /*--- Hero ---*/
 .hero_1 {
     padding: 20px;
-    border: 2px solid yellow;
+    //border: 2px solid yellow;
 }
 
 .hero_2 {
-    border: 2px solid lightblue;
+    //border: 2px solid lightblue;
 }
 
 .inr {
     width: 90%;
     //width: 500px;
     margin: 0 auto;
-    border: 2px solid blue;
+    //border: 2px solid blue;
 }
 
 .hero_headline {
@@ -579,7 +579,7 @@ html input[disabled] {
 
 .txt_b {
     padding: 20px;
-    border: 2px solid red;
+    //border: 2px solid red;
 }
 
 
@@ -729,48 +729,182 @@ html input[disabled] {
 
 
 
-/*--- ---*/
+/*--- Grid ---*/
 .wrap_grid {
     display: grid;
-    gap: 20px;
+    //gap: 20px;
+
     grid-template-areas:
     "header"
     "navbar"
     "content"
     "sidebar"
-    "adv"
+    "title"
+    "stuff"
     "footer";
-    border: 2px solid maroon;
+    //border: 2px solid pink;
 }
 
-.main-head {
+.mainhead {
     grid-area: header;
-    border: 2px solid maroon;
+    padding: 20px;
+    text-align: center;
+    //border: 2px solid maroon;
 }
 
-.content {
+.content2 {
     grid-area: content;
-    border: 2px solid maroon;
+    padding: 20px;
+    height: 100%;
+
+    margin-top: 0;
+    //border: 2px solid green;
 }
 
-.main-nav {
+.int_nav {
     grid-area: navbar;
-    border: 2px solid maroon;
+    padding: 20px;
+    //border: 2px solid maroon;
 }
 
 .sidebar2 {
     grid-area: sidebar;
-    border: 2px solid maroon;
+    padding: 20px;
+    //border: 2px solid maroon;
+    background-size: cover;
+    background-image: url("../img/coffee_11.jpg");
 }
 
-.adv {
-    grid-area: adv;
-    border: 2px solid maroon;
+.title_block {
+    grid-area: title;
+    display: block;
+    text-align: center;
+    padding: 20px 20px 0;
+
+    //border: 1px solid orange;
+}
+
+.stuff {
+    grid-area: stuff;
+
+    display: flex;
+    padding: 20px;
+    //border: 2px solid maroon;
+}
+
+.stuff_list {
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+
+    //border: 2px solid lightblue;
+}
+
+.stuff_list p {
+    //font-size: 15px;
 }
 
 .main-footer {
     grid-area: footer;
-    border: 2px solid maroon;
+    padding: 20px;
+    //border: 2px solid maroon;
+}
+
+@media(min-width: 600px) {
+    .wrap_grid {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+        "header header"
+        "navbar navbar"
+        "sidebar content"
+        "title title"
+        "stuff stuff"
+        "footer footer";
+    }
+
+    .wrap_grid nav {
+        //border: 2px solid yellow;
+    }
+
+    .wrap_grid nav ul {
+        display: flex;
+        justify-content: end;
+    }
+
+    .wrap_grid a {
+        margin-left: 20px;
+    }
+}
+
+@media(min-width: 760px) {
+    .wrap_grid { /*
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+        "header header header"
+        "navbar content sidebar"
+        "navbar content sidebar"
+        "title title title"
+        "stuff stuff stuff"
+        "footer footer footer"; */
+    }
+
+    .content2 {
+        //width: 100%;
+    }
+
+    .sidebar2 {
+        //width: 100%;
+    }
+}
+
+
+
+/*--- DD Menu ---*/
+.ddMenu {
+    background-color: var(--clr-accent-400);
+    //border: 2px solid blue;
+}
+
+.control button {
+    display: flex;
+    margin: 0 auto;
+}
+
+.collapse { /*--- btn ---*/
+    display: flex;
+    margin: 0 auto;
+    color: var(--clr-accent-500);
+    //min-width: 150px;
+    padding: .6em 2.5em;
+    //font: inherit;
+    font-size: 14px;
+    text-align: center;
+    //font-size: var(--fs-btn);  /*--- 13px ---*/
+    border: 2px solid var(--clr-accent-500);
+    background-color: var(--clr-accent-400);
+    //border: 1px solid blue;
+}
+
+.active2, .collapse:hover {
+    text-align: center;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: var(--clr-accent-400);
+}
+
+.content { /*--- hidden by def ---*/
+    //padding: 20px; /* was 0 18px */
+
+    color: #000;
+    background-color: var(--clr-accent-400);
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.5s ease-out;
+}
+
+.content p {
+    color: #fff;
 }
 
 
@@ -796,7 +930,7 @@ html input[disabled] {
     display: inline-block;
     margin: 0;
     padding: 20px 25px 35px 25px;
-    background: url('../img/ribbon.svg') no-repeat;
+    background: url('../img/.svg') no-repeat;
     background-position: 50% 0;
 
     color: #fff;
@@ -805,7 +939,7 @@ html input[disabled] {
     font-weight: bold;
 }
 
-.mean_menu {
+.biscuit_menu {
     display: flex;
     overflow: hidden;
 
@@ -824,12 +958,10 @@ html input[disabled] {
 }
 
 .l_menu {
-    //float: left;
     width: 50%;
 }
 
 .r_menu {
-    //float: right;
     width: 50%;
 }
 
@@ -849,7 +981,6 @@ html input[disabled] {
 
 .item_info {
     //display: inline-block;
-    //float: left;
     text-align: center;
 }
 
@@ -869,13 +1000,11 @@ html input[disabled] {
     color: #fff;
     font-family: "poppins", arial;
     font-size: 12px;
-    //font-style: italic;
     //letter-spacing: 1px;
     //font-weight: lighter;
 }
 
-.price {
-    //float: right;
+.prices {
     color: #fff;
     font-family: "poppins", arial;
     font-size: 16px;
@@ -889,7 +1018,7 @@ html input[disabled] {
 .separator {
     position: absolute;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: orange;
     top: 10px;
     border: 0;
@@ -901,8 +1030,8 @@ html input[disabled] {
     text-align: center;
 }
 
-.load-more a {
-    display: inline-block;
+.load_more a {
+    display: block;
     color: #b7b7b7;
     margin-top: 30px;
     padding: 10px 15px;
@@ -914,7 +1043,7 @@ html input[disabled] {
     letter-spacing: 1px;
 }
 
-.load-more hr {
+.load_more hr {
     width: 1px;
     height: 12px;
     border: 0;
@@ -924,10 +1053,9 @@ html input[disabled] {
 }
 
 .bottom_arrow, .top_arrow {
-    display: inline-block;
-    width: 11px;
-    height: 7px;
-    background-repeat: repeat-y;
+    display: block;
+    width: 10px;
+    height: 6px;
     margin-bottom: 1px;
 }
 
@@ -1045,7 +1173,7 @@ html input[disabled] {
 .header_2 {
     display: flex;
     align-items: center;
-    height: 50vh;
+    height: 100vh;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -1261,6 +1389,7 @@ html input[disabled] {
 .btn--empty {
     padding: 10px 20px;
     margin-top: 40px;
+    min-width: 150px;
     border: 2px solid #2e2e2e;
     border-radius: 0;
     color: #fff;
